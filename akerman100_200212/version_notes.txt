@@ -1,0 +1,23 @@
+FINE TUNE:
+_ scrubber Length
+    - possible to set max value and make it proportional to how long
+    delay length would be?
+
+_ rippleX and rippleY are set to center, not mouse click setting it
+
+_ "Box" ripple doesn't work
+
+NOTE:
+_ using older library to work with SVG
+
+
+
+
+TO DO:
++ DON"T DRAW THE SHAPE, DRAW THE IMAGE!
+Don't worry about individual points; draw the graphic and then repeat in the rotations
+Draw image and rotate that, not a beginShape() with graphics
+
+OR!
+
+Switch to just lerping the color and drawing lines between two extremes
