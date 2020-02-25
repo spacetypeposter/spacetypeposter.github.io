@@ -261,7 +261,7 @@ function draw() {
 function mousePressed(){
   if(mouseCheck.checked() && mouseX>150){
     rippleX = mouseX; rippleY = mouseY;
-    maxX = mouseX + 1.5*width; maxY = mouseY + 1.5*height;
+    maxX = mouseX + width; maxY = mouseY + height;
   }
 
   spinStart = frameCount;
