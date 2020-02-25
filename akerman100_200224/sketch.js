@@ -50,41 +50,41 @@ function setup() {
   rowsSlider = createSlider(0,100,34); rowsSlider.position(30,30); rowsSlider.style('width','100px');
   colsSlider = createSlider(0,100,34); colsSlider.position(30,60);colsSlider.style('width','100px');
   sizeSlider = createSlider(0,2,1,0.01); sizeSlider.position(30,90); sizeSlider.style('width','100px'); sizeSlider.changed(reSize);
-  rotSpeedSlider = createSlider(0,4,1,0.01);rotSpeedSlider.position(30,150);rotSpeedSlider.style('width','100px');
-  rippleSpeedSlider = createSlider(0,10,5,0.01);rippleSpeedSlider.position(30,180);rippleSpeedSlider.style('width','100px');
+  rotSpeedSlider = createSlider(0,4,1,0.01);rotSpeedSlider.position(30,120);rotSpeedSlider.style('width','100px');
+  rippleSpeedSlider = createSlider(0,10,5,0.01);rippleSpeedSlider.position(30,150);rippleSpeedSlider.style('width','100px');
 
-  radialCheck = createCheckbox(' ',true);radialCheck.position(30,240);radialCheck.changed(myRadialCheck);
-  diamondCheck = createCheckbox(' ',false);diamondCheck.position(30,260);diamondCheck.changed(myDiamondCheck);
-  frameCheck = createCheckbox(' ',false);frameCheck.position(30,280);frameCheck.changed(myFrameCheck);
+  radialCheck = createCheckbox(' ',true);radialCheck.position(30,190);radialCheck.changed(myRadialCheck);
+  diamondCheck = createCheckbox(' ',false);diamondCheck.position(30,210);diamondCheck.changed(myDiamondCheck);
+  frameCheck = createCheckbox(' ',false);frameCheck.position(30,230);frameCheck.changed(myFrameCheck);
 
-  dashColorPick = createInput('FF0000'); dashColorPick.position(30,330); dashColorPick.style('width','40px');
-  bkgdColorPick = createInput('FFFFFF'); bkgdColorPick.position(30,360); bkgdColorPick.style('width','40px');
+  dashColorPick = createInput('FF0000'); dashColorPick.position(30,270); dashColorPick.style('width','40px');
+  bkgdColorPick = createInput('FFFFFF'); bkgdColorPick.position(30,300); bkgdColorPick.style('width','40px');
 
-  solidCheck = createCheckbox(' ',true); solidCheck.position(30,410);solidCheck.changed(mySolidCheck);
-  gradientCheck = createCheckbox(' ',false);gradientCheck.position(30,430);gradientCheck.changed(myGradientCheck);
+//  solidCheck = createCheckbox(' ',true); solidCheck.position(30,410);solidCheck.changed(mySolidCheck);
+//  gradientCheck = createCheckbox(' ',false);gradientCheck.position(30,430);gradientCheck.changed(myGradientCheck);
 
-  gradient1Pick = createInput('FF0000'); gradient1Pick.position(30,460); gradient1Pick.style('width','40px');gradient1Pick.input(reSize);
-  gradient2Pick = createInput('0000FF'); gradient2Pick.position(30,490); gradient2Pick.style('width','40px');gradient2Pick.input(reSize);
+//  gradient1Pick = createInput('FF0000'); gradient1Pick.position(30,460); gradient1Pick.style('width','40px');gradient1Pick.input(reSize);
+//  gradient2Pick = createInput('0000FF'); gradient2Pick.position(30,490); gradient2Pick.style('width','40px');gradient2Pick.input(reSize);
 
   motionCheck = createCheckbox(' ',true);motionCheck.position(30,height-80);motionCheck.changed(myMotionCheck);
   scrubCheck = createCheckbox(' ',false);scrubCheck.position(30,height-60);scrubCheck.changed(myScrubCheck);
   scrubSlider = createSlider(0,200,0);scrubSlider.position(100,height-60);scrubSlider.style('width','300px');
 
-  tlCheck = createCheckbox('',false); tlCheck.position(30,550); tlCheck.changed(myTLCheck);
-  tcCheck = createCheckbox('',false); tcCheck.position(50,550); tcCheck.changed(myTCCheck);
-  trCheck = createCheckbox('',false); trCheck.position(70,550); trCheck.changed(myTRCheck);
-  clCheck = createCheckbox('',false); clCheck.position(30,570); clCheck.changed(myCLCheck);
-  ccCheck = createCheckbox('',true); ccCheck.position(50,570); ccCheck.changed(myCCCheck);
-  crCheck = createCheckbox('',false); crCheck.position(70,570); crCheck.changed(myCRCheck);
-  blCheck = createCheckbox('',false); blCheck.position(30,590); blCheck.changed(myBLCheck);
-  bcCheck = createCheckbox('',false); bcCheck.position(50,590); bcCheck.changed(myBCCheck);
-  brCheck = createCheckbox('',false); brCheck.position(70,590); brCheck.changed(myBRCheck);
-  mouseCheck = createCheckbox('',false); mouseCheck.position(30,610); mouseCheck.changed(myMouseCheck);
+  tlCheck = createCheckbox('',false); tlCheck.position(30,350); tlCheck.changed(myTLCheck);
+  tcCheck = createCheckbox('',false); tcCheck.position(50,350); tcCheck.changed(myTCCheck);
+  trCheck = createCheckbox('',false); trCheck.position(70,350); trCheck.changed(myTRCheck);
+  clCheck = createCheckbox('',false); clCheck.position(30,370); clCheck.changed(myCLCheck);
+  ccCheck = createCheckbox('',true); ccCheck.position(50,370); ccCheck.changed(myCCCheck);
+  crCheck = createCheckbox('',false); crCheck.position(70,370); crCheck.changed(myCRCheck);
+  blCheck = createCheckbox('',false); blCheck.position(30,390); blCheck.changed(myBLCheck);
+  bcCheck = createCheckbox('',false); bcCheck.position(50,390); bcCheck.changed(myBCCheck);
+  brCheck = createCheckbox('',false); brCheck.position(70,390); brCheck.changed(myBRCheck);
+  mouseCheck = createCheckbox('',false); mouseCheck.position(30,410); mouseCheck.changed(myMouseCheck);
 
-  saveSvgButton = createButton('Export SVG');saveSvgButton.position(30,710);saveSvgButton.mousePressed(exportSVG);
-  savePngButton = createButton('Export PNG');savePngButton.position(30,740);savePngButton.mousePressed(exportPNG);
+  saveSvgButton = createButton('Export SVG');saveSvgButton.position(30,445);saveSvgButton.mousePressed(exportSVG);
+//  savePngButton = createButton('Export PNG');savePngButton.position(30,740);savePngButton.mousePressed(exportPNG);
 
-  saveLoopSet = createButton('Save Loop'); saveLoopSet.position(30,770); saveLoopSet.mousePressed(saveLoop);
+  saveLoopSet = createButton('Save Loop'); saveLoopSet.position(30,470); saveLoopSet.mousePressed(saveLoop);
 
   rippleX = width/2;
   rippleY = height/2;
@@ -93,10 +93,10 @@ function setup() {
 
   pixelDensityCheck = pixelDensity();
 
-  gradient1 = color('#'+gradient1Pick.value());
-  gradient2 = color('#'+gradient2Pick.value());
+//  gradient1 = color('#'+gradient1Pick.value());
+//  gradient2 = color('#'+gradient2Pick.value());
 
-  buildGradientDash(gradient1,gradient2);
+//  buildGradientDash(gradient1,gradient2);
 }
 
 function draw() {
@@ -151,6 +151,7 @@ function draw() {
         let delayDistY = dist(j*xSpace,i*ySpace,j*xSpace,rippleY);
         let delayDistX = dist(j*xSpace,i*ySpace,rippleX,i*ySpace);
         delayDist = dist(delayDistY,delayDistX,rippleX,rippleY)/2 * -rippleSpeed + 8*PI;
+  //      delayDist = dist(delayDistX,delayDistY,rippleX,rippleY) * rippleSpeed;
       }
 
       // spin with motion
@@ -164,7 +165,7 @@ function draw() {
 
       //spin with scrubbing
       if(scrubCheck.checked()){
-        let maxDist = dist(rippleX,rippleY,0,0);
+        let maxDist = dist(rippleX,rippleY,maxX,maxY);
         let scrubValue = map(scrubSlider.value(),0,200,0,2*PI + maxDist*rippleSpeed/4);
         let spinner = scrubValue - delayDist*spinSteps;
 
@@ -175,11 +176,11 @@ function draw() {
         rotate(spinner);
       }
 
-      if(gradientCheck.checked()){
-         image(pGradient,-pGradient.width/2,-pGradient.height/2);
-      } else {
+  //    if(gradientCheck.checked()){
+  //       image(pGradient,-pGradient.width/2,-pGradient.height/2);
+  //    } else {
         dash(0,0,dashSize);
-      }
+  //    }
       pop();
     }
   }
@@ -195,42 +196,41 @@ function draw() {
     text("Rows " + rows, 30, 30);
     text("Columns " + cols, 30, 60);
     text("Size " + dashSize, 30, 90);
+    text("Spin Length " + rotSpeed, 30, 120);
+    text("Ripple Length " + rippleSpeedSlider.value(), 30, 150);
 
-    text("Spin Length " + rotSpeed, 30, 150);
-    text("Ripple Length " + rippleSpeedSlider.value(), 30, 180);
+    text("RIPPLE SHAPE", 30, 183);
+    text("Radial", 50, 203);
+    text("Diamond", 50, 223);
+    text("Frame", 50, 243);
 
-    text("RIPPLE SHAPE", 30, 233);
-    text("Radial", 50, 253);
-    text("Diamond", 50, 273);
-    text("Frame", 50, 293);
+    text("DASH COLOR", 80, 283);
+    text("BACKGROUND", 80, 313);
 
-    text("DASH COLOR", 80, 343);
-    text("BACKGROUND", 80, 373);
+//    text("DASH STYLE", 30, 403);
+//    text("Solid", 50, 423);
+//    text("Gradient", 50, 443);
 
-    text("DASH STYLE", 30, 403);
-    text("Solid", 50, 423);
-    text("Gradient", 50, 443);
+    // text("Gradient 1", 80, 473);
+    // text("Gradient 2", 80, 503);
 
-    text("Gradient 1", 80, 473);
-    text("Gradient 2", 80, 503);
-
-    text("RIPPLE CENTER", 30, 545);
-    text("Mouse", 55, 623);
+    text("RIPPLE CENTER", 30, 345);
+    text("Mouse", 55, 423);
 
     text("Motion", 50, height-67);
     text("Scrub", 50, height-47);
 
     strokeWeight(1);
     fill(dashColor); stroke(bkgdColor);
-    ellipse(30, 338, 30,30);
+    ellipse(30, 273, 30,30);
     fill(bkgdColor); stroke(dashColor);
-    ellipse(30, 368, 30,30);
+    ellipse(30, 303, 30,30);
 
-    strokeWeight(1);
-    fill(gradient1); stroke(gradient2);
-    ellipse(30, 468, 30,30);
-    fill(gradient2); stroke(gradient1);
-    ellipse(30, 498, 30,30);
+    // strokeWeight(1);
+    // fill(gradient1); stroke(gradient2);
+    // ellipse(30, 468, 30,30);
+    // fill(gradient2); stroke(gradient1);
+    // ellipse(30, 498, 30,30);
   }
 
   if(svgSaveToggle){
