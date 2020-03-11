@@ -15,6 +15,8 @@ let spinEnd;
 let rotSpeed;
 let rippleSpeed;
 
+let rotationNumber = 1;
+
 let svgSaveToggle = false;
 let pngSaveToggle = false;
 
@@ -81,6 +83,9 @@ function setup() {
   brCheck = createCheckbox('',false); brCheck.position(70,390); brCheck.changed(myBRCheck);
   mouseCheck = createCheckbox('',false); mouseCheck.position(30,410); mouseCheck.changed(myMouseCheck);
 
+  singleFlipCheck = createCheckbox('',true); singleFlipCheck.position(110,390); singleFlipCheck.changed(singleToggle);
+  doubleFlipCheck = createCheckbox('',false); doubleFlipCheck.position(110,410); doubleFlipCheck.changed(doubleToggle);
+
   saveSvgButton = createButton('Export SVG');saveSvgButton.position(30,445);saveSvgButton.mousePressed(exportSVG);
 //  savePngButton = createButton('Export PNG');savePngButton.position(30,740);savePngButton.mousePressed(exportPNG);
 
@@ -108,6 +113,12 @@ function draw() {
     pixelDensity(1);
   } else {
     pixelDensity(pixelDensityCheck);
+  }
+
+  if(singleFlipCheck.checked()==true){
+    rotationNumber = 1;
+  } else {
+    rotationNumber = 2;
   }
 
   dashColor = color('#'+dashColorPick.value());
@@ -150,7 +161,7 @@ function draw() {
       if(frameCheck.checked() ==true){
         let delayDistY = dist(j*xSpace,i*ySpace,j*xSpace,rippleY);
         let delayDistX = dist(j*xSpace,i*ySpace,rippleX,i*ySpace);
-        delayDist = dist(delayDistY,delayDistX,rippleX,rippleY)/2 * -rippleSpeed + 8*PI;
+        delayDist = dist(delayDistY,delayDistX,rippleX,rippleY)/2 * -rippleSpeed + 8*PI*rotationNumber;
   //      delayDist = dist(delayDistX,delayDistY,rippleX,rippleY) * rippleSpeed;
       }
 
@@ -159,17 +170,17 @@ function draw() {
         let spinner = spinEngine - delayDist*spinSteps;
 
         // ease
-        let easeFactor = map(sinEngine(spinner-PI/2,1),-1,1,0,2*PI)
+        let easeFactor = map(sinEngine(spinner-PI/2,1),-1,1,0,(2*PI*rotationNumber));
         rotate(easeFactor);
       }
 
       //spin with scrubbing
       if(scrubCheck.checked()){
         let maxDist = dist(rippleX,rippleY,maxX,maxY);
-        let scrubValue = map(scrubSlider.value(),0,200,0,2*PI + maxDist*rippleSpeed/4);
+        let scrubValue = map(scrubSlider.value(),0,200,0,(2*PI*rotationNumber) + maxDist*rippleSpeed/4);
         let spinner = scrubValue - delayDist*spinSteps;
 
-        if(spinner>2*PI || spinner<0){
+        if(spinner>(2*PI*rotationNumber) || spinner<0){
           spinner = 0;
         }
 
@@ -216,6 +227,10 @@ function draw() {
 
     text("RIPPLE CENTER", 30, 345);
     text("Mouse", 55, 423);
+
+    text("FLIPS", 115, 385);
+    text("Single", 130, 405);
+    text("Double", 130, 425);
 
     text("Motion", 50, height-67);
     text("Scrub", 50, height-47);
@@ -336,6 +351,15 @@ function myScrubCheck(){if(motionCheck.checked() == true){ motionCheck.checked(f
 
 function mySolidCheck(){if(gradientCheck.checked() == true){ gradientCheck.checked(false);}}
 function myGradientCheck(){if(solidCheck.checked() == true){ solidCheck.checked(false);}}
+
+function doubleToggle(){
+  if(singleFlipCheck.checked() == true){ singleFlipCheck.checked(false);}
+  if(doubleFlipCheck.checked() == false){ doubleFlipCheck.checked(true);}
+}
+function singleToggle(){
+  if(doubleFlipCheck.checked() == true){ doubleFlipCheck.checked(false);}
+  if(singleFlipCheck.checked() == false){ singleFlipCheck.checked(true);}
+}
 
 function myRadialCheck(){
   if(diamondCheck.checked() == true){ diamondCheck.checked(false);}
