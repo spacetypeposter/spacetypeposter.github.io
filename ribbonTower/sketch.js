@@ -28,16 +28,16 @@ function preload(){
   font0 = loadFont('resources/IBMPlexMono-Regular.otf');
   font1 = loadFont('resources/nimbus-sans-l_regular-condensed.ttf');
 
-  img1 = loadImage('https://www.studiomut.com/ribbon/01.png');
-  img2 = loadImage('https://www.studiomut.com/ribbon/02.png');
-  img3 = loadImage('https://www.studiomut.com/ribbon/03.png');
-  img4 = loadImage('https://www.studiomut.com/ribbon/04.png');
-  img5 = loadImage('https://www.studiomut.com/ribbon/05.png');
-  img6 = loadImage('https://www.studiomut.com/ribbon/06.png');
-  img7 = loadImage('https://www.studiomut.com/ribbon/07.png');
-  img8 = loadImage('https://www.studiomut.com/ribbon/08.png');
-  img9 = loadImage('https://www.studiomut.com/ribbon/09.png');
-  img10 = loadImage('https://www.studiomut.com/ribbon/10.png');
+  img1 = loadImage('http://ribbon.studiomut.com/01.png');
+  img2 = loadImage('http://ribbon.studiomut.com/02.png');
+  img3 = loadImage('http://ribbon.studiomut.com/03.png');
+  img4 = loadImage('http://ribbon.studiomut.com/04.png');
+  img5 = loadImage('http://ribbon.studiomut.com/05.png');
+  img6 = loadImage('http://ribbon.studiomut.com/06.png');
+  img7 = loadImage('http://ribbon.studiomut.com/07.png');
+  img8 = loadImage('http://ribbon.studiomut.com/08.png');
+  img9 = loadImage('http://ribbon.studiomut.com/09.png');
+  img10 = loadImage('http://ribbon.studiomut.com/10.png');
 }
 
 function setup() {
