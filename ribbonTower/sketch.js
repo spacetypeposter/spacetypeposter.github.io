@@ -28,12 +28,16 @@ function preload(){
   font0 = loadFont('resources/IBMPlexMono-Regular.otf');
   font1 = loadFont('resources/nimbus-sans-l_regular-condensed.ttf');
 
-  img1 = loadImage('images/tr_ribbon1.png');
-  img2 = loadImage('images/tr_ribbon2.png');
-  img3 = loadImage('images/tr_ribbon3.png');
-  img4_pat = loadImage('images/tr_ribbon_pattern1.png');
-  img5_pat = loadImage('images/tr_ribbon_pattern2.png');
-  img6_pat = loadImage('images/tr_ribbon_pattern3.png');
+  img1 = loadImage('https://www.studiomut.com/ribbon/01.png');
+  img2 = loadImage('https://www.studiomut.com/ribbon/02.png');
+  img3 = loadImage('https://www.studiomut.com/ribbon/03.png');
+  img4 = loadImage('https://www.studiomut.com/ribbon/04.png');
+  img5 = loadImage('https://www.studiomut.com/ribbon/05.png');
+  img6 = loadImage('https://www.studiomut.com/ribbon/06.png');
+  img7 = loadImage('https://www.studiomut.com/ribbon/07.png');
+  img8 = loadImage('https://www.studiomut.com/ribbon/08.png');
+  img9 = loadImage('https://www.studiomut.com/ribbon/09.png');
+  img10 = loadImage('https://www.studiomut.com/ribbon/10.png');
 }
 
 function setup() {
@@ -61,21 +65,29 @@ function setup() {
   spinOffsetPicker = createSlider(0,2*PI,0,0.01); spinOffsetPicker.position(10,height/2 + 30); spinOffsetPicker.style('width','100px');
 
   selA = createSelect(); selA.position(10, height/2 + 90); selA.style('width','150px'); selA.style('height','20px');
-  selA.option('Graphic 1',0);
-  selA.option('Graphic 2',1);
-  selA.option('Graphic 3',2);
-  selA.option('Pattern 1',3);
-  selA.option('Pattern 2',4);
-  selA.option('Pattern 3',5);
+  selA.option('1',0);
+  selA.option('2',1);
+  selA.option('3',2);
+  selA.option('4',3);
+  selA.option('5',4);
+  selA.option('6',5);
+  selA.option('7',6);
+  selA.option('8',7);
+  selA.option('9',8);
+  selA.option('10',9);
   selA.selected(0);
 
   selB = createSelect(); selB.position(10, height/2 + 120); selB.style('width','150px'); selB.style('height','20px');
-  selB.option('Graphic 1',0);
-  selB.option('Graphic 2',1);
-  selB.option('Graphic 3',2);
-  selB.option('Pattern 1',3);
-  selB.option('Pattern 2',4);
-  selB.option('Pattern 3',5);
+  selB.option('1',0);
+  selB.option('2',1);
+  selB.option('3',2);
+  selB.option('4',3);
+  selB.option('5',4);
+  selB.option('6',5);
+  selB.option('7',6);
+  selB.option('8',7);
+  selB.option('9',8);
+  selB.option('10',9);
   selB.selected(3);
 
   frameRate(30);
@@ -158,11 +170,19 @@ function draw() {
   } else if(selA.value() == 2){
     currentG = img3;
   } else if(selA.value() == 3){
-    currentG = img4_pat;
+    currentG = img4;
   } else if(selA.value() == 4){
-    currentG = img5_pat;
+    currentG = img5;
   } else if(selA.value() == 5){
-    currentG = img6_pat;
+    currentG = img6;
+  } else if(selA.value() == 6){
+    currentG = img7;
+  } else if(selA.value() == 7){
+    currentG = img8;
+  } else if(selA.value() == 8){
+    currentG = img9;
+  } else if(selA.value() == 9){
+    currentG = img10;
   }
   texture(currentG);
   // fill(255);
@@ -177,11 +197,19 @@ function draw() {
   } else if(selB.value() == 2){
     currentG = img3;
   } else if(selB.value() == 3){
-    currentG = img4_pat;
+    currentG = img4;
   } else if(selB.value() == 4){
-    currentG = img5_pat;
+    currentG = img5;
   } else if(selB.value() == 5){
-    currentG = img6_pat;
+    currentG = img6;
+  } else if(selB.value() == 6){
+    currentG = img7;
+  } else if(selB.value() == 7){
+    currentG = img8;
+  } else if(selB.value() == 8){
+    currentG = img9;
+  } else if(selB.value() == 9){
+    currentG = img10;
   }
   texture(currentG);
   ribbonEngine(currentG,true);
